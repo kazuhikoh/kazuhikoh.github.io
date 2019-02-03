@@ -3,9 +3,9 @@ document.querySelectorAll('img.pict').forEach(e => {
   let src = e.getAttribute('src').replace(/\/small$/, '');
   let xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
-    if (this.readyState == 4 && this.status == 200) {
+    if (xhr.readyState == 4 && xhr.status == 200) {
       let a = document.createElement('a');
-      a.href = URL.createObjectURL(new Blob([this.response], {
+      a.href = URL.createObjectURL(new Blob([xhr.response], {
         type: 'image/jpeg'
       }));
       a.download = filename;
