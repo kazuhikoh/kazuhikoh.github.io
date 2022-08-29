@@ -139,6 +139,8 @@ function addGridItem(index, e) {
     const eLink = document.createElement('a')
     eLink.innerHTML = 'Link'
     eLink.href = e.getAttribute('src').replace(/\/small$/, '')
+    eLink.setAttribute('target', '_blank')
+    eLink.setAttribute('rel', 'noopener noreferrer')
     
     const eResult = document.createElement('span')
     eResult.setAttribute('id', `piyo-grid-item-result-${index}`)
