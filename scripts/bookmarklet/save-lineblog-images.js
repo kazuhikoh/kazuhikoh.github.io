@@ -37,6 +37,7 @@ function createDialog() {
   }
 
   .grid-container {
+    width: 80vw;
     height: 60vh;
     padding: 0 10px 0 10px;
     overflow-y: scroll;
@@ -44,7 +45,6 @@ function createDialog() {
   .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 100px 100px;
     grid-auto-rows: 100px;
     gap: 10px;
   }
@@ -63,6 +63,14 @@ function createDialog() {
     display: flex;
     justify-content: space-between;
     padding: 0 5px 0 5px;
+  }
+  .grid-item span {
+    border-radius: 1rem;
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 0.1rem 0.2rem;
+    text-align: center;
+    white-space: nowrap;
   }
   .grid-item span.ok {
     background-color: green;
@@ -206,7 +214,8 @@ function download(images, progressCallback) {
             xhr.open('GET', src);
             xhr.responseType = 'blob';
             xhr.send();            
-        })        
+        }) 
+        await sleep(0.5)
     }  
   })()
 }
