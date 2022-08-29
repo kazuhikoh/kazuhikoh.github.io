@@ -62,7 +62,11 @@ function createDialog() {
   .grid-item-footer {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
     padding: 0 5px 0 5px;
+  }
+  .grid-item a {
+    font-size: 0.8em;
   }
   .grid-item span {
     border-radius: 1rem;
